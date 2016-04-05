@@ -1,0 +1,19 @@
+1.需要集成redis、memcacher。时间点问题
+2.freemarker和volcity对比，模板技术的各种应用，数字、金额的处理
+3.springMVC、通知、拦截器、定时任务、事务管理及各种隔离级别的应用、权限、安全、
+4.框架的异常处理机制
+5.ibatis、mybatis
+	批量处理操作
+	返回值类型
+	缓存机制
+6.前端技术：jquery、bootstrap、h5、兼容性问题-浏览器
+7.mysql、oracle
+	索引、视图、存储过程
+	性能瓶颈、
+	sql调优
+	分库、分表
+8.nginx
+9.电商的秒抢实现
+10.mongoDB
+11.NIO、IO操作
+12.多线程、高并发操作
