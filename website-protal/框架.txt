@@ -1,12 +1,17 @@
 1.需要集成redis、memcacher。时间点问题
+	
 2.freemarker和volcity对比，模板技术的各种应用，数字、金额的处理
-3.springMVC、通知、拦截器、定时任务、事务管理及各种隔离级别的应用、权限、安全、读写分离、
+	都需要集成进来，实际使用后才好进行对比
+3.springMVC
+		通知、拦截器、定时任务、事务管理及各种隔离级别的应用、权限、安全、读写分离、
+		注解了解。都不能只停留在应用层次
 4.框架的异常处理机制
-5.ibatis、mybatis
+5.ibatis、mybatis、hibernate集成、各自优势
 	批量处理操作
 	返回值类型
 	缓存机制
-6.前端技术：jquery、bootstrap、h5、兼容性问题-浏览器
+6.前端技术：jquery、bootstrap、h5、兼容性问题-浏览器、node.js、angular.js
+	javascript:需要熟悉其面向对象的编程方式，需要深入学习
 7.mysql、oracle
 	索引、视图、存储过程、备份
 	性能瓶颈、
@@ -20,10 +25,14 @@
 13.日志管理问题、有哪些方式、区别、
 14.urlRewriter
 15.session的原理
+16.git的版本控制：合并分支、冲突解决（merge、reset）
 
+
+设计模式
 
 
 需求分析UML
+
 系统设计：
 	1.设计用例
 	2.设计表结构
