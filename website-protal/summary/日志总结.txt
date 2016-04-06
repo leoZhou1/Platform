@@ -1,0 +1,101 @@
+
+1、  简介
+	SLF4J不是具体的日志解决方案，它只服务于各种各样的日志系统。按照官方的说法，SLF4J是一个用于日志系统的简单Facade，允许最终用户在部署其应用时使用其所希望的日志系统。
+	实际上，SLF4J所提供的核心API是一些接口以及一个LoggerFactory的工厂类。从某种程度上，SLF4J有点类似JDBC，不过比JDBC更简单，在JDBC中，你需要指定驱动程序，而在使用SLF4J的时候，不需要在代码中或配置文件中指定你打算使用那个具体的日志系统。如同使用JDBC基本不用考虑具体数据库一样，SLF4J提供了统一的记录日志的接口，只要按照其提供的方法记录即可，最终日志的格式、记录级别、输出方式等通过具体日志系统的配置来实现，因此可以在应用中灵活切换日志系统。
+2、  什么情况下使用
+	如果你开发的是类库或者嵌入式组件，那么就应该考虑采用SLF4J，因为不可能影响最终用户选择哪种日志系统。在另一方面，如果是一个简单或者独立的应用，确定只有一种日志系统，那么就没有使用SLF4J的必要。假设你打算将你使用log4j的产品卖给要求使用JDK 1.4 Logging的用户时，面对成千上万的log4j调用的修改，相信这绝对不是一件轻松的事情。但是如果开始便使用SLF4J，那么这种转换将是非常轻松的事情。
+3、  源码及jar包下载地址
+	http://www.slf4j.org/download.html
+4、  调用举例
+	import org.slf4j.Logger;
+	import org.slf4j.LoggerFactory;
+	public class Wombat {
+	　　 final Logger logger = LoggerFactory.getLogger(Wombat.class);
+	　　 Integer t;
+	　　 Integer oldT;
+	　　 public void setTemperature(Integer temperature) {
+	　　           oldT = t;
+	　　           t = temperature;
+	　　           Object[] objs = {new java.util.Date(), oldT, t};
+	　　           logger.info("Today is {}, Temperature set to {}. Old temperature was {}.", objs);
+	　　           if (temperature.intValue() > 50) {
+	　　                    logger.warn("Temperature({}) has risen above 50 degrees.", t);
+	　　           }
+	　　 }
+	　　 public static void main(String[] args) {
+	　　           Wombat wombat = new Wombat();
+	　　           wombat.setTemperature(10);
+	　　           wombat.setTemperature(60);
+	　　 }
+	}
+5、  日志绑定原理
+	在应用中，通过LoggerFactory类的静态getLogger()获取logger。通过查看该类的代码可以看出，最终是通过StaticLoggerBinder.SINGLETON.getLoggerFactory()方法获取LoggerFactory然后，在通过该具体的LoggerFactory来获取logger的。类org.slf4j.impl.StaticLoggerBinder并不在slf4j-api-1.*.*.jar包中，仔细查看每个与具体日志系统对应的jar包，就会发现，相应的jar包都有一个org.slf4j.impl.StaticLoggerBinder的实现，不同的实现返回与该日志系统对应的LoggerFactory，因此就实现了所谓的静态绑定，达到只要选取不同jar包就能简单灵活配置的目的。
+6、  日志系统的切换
+	编译上边的程序，需要classpath中加入slf4j-api-1.4.1.jar文件。 
+	运行时，需要classpath中加上slf4j-simple-1.4.1.jar。
+	切换到jdk14的log的风格:只需要把slf4j-simple-1.4.1.jar从classpath中移除，同时classpath中加入slj4j-jdk14-1.4.1.jar
+	切换到log4j:同样移除slj4j-jdk14-1.4.1.jar，加入slf4j-log4j12-1.4.1.jar，同时加入log4j-1.2.x.jar加入log4j.properties。
+
+
+
+
+##############  log4j简易入门     ##############
+package test.log4j;
+
+import org.apache.log4j.Logger;
+
+public class HelloLog4j {
+    private static final Logger logger = Logger.getLogger(HelloLog4j.class);
+    public static void main(String[] args) {
+        logger.debug("This is debug message");
+        logger.info("This is info message");
+        logger.warn("This is warn message");
+        logger.error("This is error message");
+    }
+}
+复制代码
+log4j简单配置log4j.properties
+#可以设置级别：debug < info < warn < error
+#debug: 显示debug, info, warn, error
+#info: 显示info, warn, error
+#warn: 显示warn, error
+#error: 只显示error
+#日志的输出级别由rootLogger和普通Logger设置的最高级别决定。
+
+#log4j.rootLogger=debug,appender1
+#log4j.rootLogger=info,appender1
+log4j.rootLogger=warn,appender1
+#log4j.rootLogger=error,appender1
+
+#输出到控制台
+log4j.appender.appender1=org.apache.log4j.ConsoleAppender
+#样式为TTCCLayout
+log4j.appender.appender1.layout=org.apache.log4j.TTCCLayout
+
+#这里配置的是类所在的包test.log4j, 逗号之前未配置日志输出级别，默认为根logger的级别
+log4j.logger.test.log4j=, TEST
+log4j.appender.TEST=org.apache.log4j.ConsoleAppender
+log4j.appender.TEST.layout=org.apache.log4j.TTCCLayout
+复制代码
+log4j提供的Appender
+org.apache.log4j.ConsoleAppender（控制台），
+org.apache.log4j.FileAppender（文件），
+org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件），
+org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件），
+org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）
+复制代码
+log4j提供的Layout
+org.apache.log4j.HTMLLayout（以HTML表格形式布局），
+org.apache.log4j.PatternLayout（可以灵活地指定布局模式），
+org.apache.log4j.SimpleLayout（包含日志信息的级别和信息字符串），
+org.apache.log4j.TTCCLayout（包含日志产生的时间、线程、类别等等信息）
+复制代码
+Log4J采用类似C语言中的printf函数的打印格式格式化日志信息，打印参数如下：
+　　%m 输出代码中指定的消息
+　　%p 输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL
+　　%r 输出自应用启动到输出该log信息耗费的毫秒数
+　　%c 输出所属的类目，通常就是所在类的全名
+　　%t 输出产生该日志事件的线程名
+　　%n 输出一个回车换行符，Windows平台为“rn”，Unix平台为“n”
+　　%d 输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyy MMM dd HH:mm:ss,SSS}，输出类似：2002年10月18日 22：10：28，921
+　　%l 输出日志事件的发生位置，包括类目名、发生的线程，以及在代码中的行数。举例：Testlog4.main(TestLog4.java:10)
