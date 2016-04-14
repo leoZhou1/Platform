@@ -3,13 +3,16 @@ package com.website.demo.service;
 import java.util.List;
 import java.util.Map;
 
+import com.website.demo.helper.DatabaseHelper;
 import com.website.demo.model.Customer;
 
 public class CustomerService {
+		
 	
 	public List<Customer> getCustomerList(){
-		
-		return null;
+		String sql = "SELECT * FROM CUSTOMER";
+		List<Customer> list = DatabaseHelper.queryList(Customer.class, sql, null);
+		return list;
 	}
 	
 	public Customer getCustomer(long id){

@@ -3,6 +3,7 @@ package com.website.protal.test;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.Test;
 
 import com.website.demo.model.Customer;
 import com.website.demo.service.CustomerService;
@@ -22,8 +23,11 @@ public class CustomerTest {
 		
 	}
 	
+	@SuppressWarnings("deprecation")
+	@Test
 	public void getCustomerListTest(){
 		List<Customer> list = customerService.getCustomerList();
+		System.out.println(list.size());
 		Assert.assertEquals(2, list.size());
 	}
 	
