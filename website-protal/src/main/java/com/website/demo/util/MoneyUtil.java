@@ -122,8 +122,8 @@ public class MoneyUtil {
 	    }
 	  }
 
-	//  public static void main(String[] args) {
-	//   MoneyUtil moneyUtil  = new MoneyUtil();
-	//   System.out.println(moneyUtil.toChinese("10001"));
-	//  }
+	  public static void main(String[] args) {
+	   MoneyUtil moneyUtil  = new MoneyUtil();
+	   System.out.println(moneyUtil.toChinese("10001.24"));
+	  }
 }
