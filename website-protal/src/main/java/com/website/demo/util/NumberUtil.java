@@ -7,9 +7,7 @@ public class NumberUtil {
 	private static final Character[] CN_NUMERIC = { '一', '二', '三', '四', '五',  
             '六', '七', '八', '九', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖',  
             '十', '百', '千', '拾', '佰', '仟', '万', '亿', '○', 'Ｏ', '零' };  
-  
     private static Map<Character, Integer> cnNumeric = null;  
-  
     static {  
         cnNumeric = new HashMap<Character, Integer>(40, 0.85f);  
         for (int j = 0; j < 9; j++)  
@@ -32,26 +30,25 @@ public class NumberUtil {
             return -1;  
         return i.intValue();  
     }  
-    public static int cnNumericToArabic(String cnn, boolean flag) {  
-  
+    public static long cnNumericToArabic(String cnn, boolean flag) {  
         cnn = cnn.trim();  
-        if (cnn.length() == 1)  
+        if (cnn.length() == 1)  {
             return isCNNumeric(cnn.charAt(0));  
-  
-        if (flag)  
+        }
+        if (flag)  {
             cnn = cnn.replace('佰', '百').replace('仟', '千').replace('拾', '十')  
-                    .replace('零', ' ');  
-        // System.out.println(cnn);  
+                    .replace('零', ' ');
+        }
         int yi = -1, wan = -1, qian = -1, bai = -1, shi = -1;  
-        int val = 0;  
+        long val = 0;  
         yi = cnn.lastIndexOf('亿');  
         if (yi > -1) {  
             val += cnNumericToArabic(cnn.substring(0, yi), false) * 100000000;  
-            if (yi < cnn.length() - 1)  
+            if (yi < cnn.length() - 1)  {
                 cnn = cnn.substring(yi + 1, cnn.length());  
-            else  
+            }else  {
                 cnn = "";  
-  
+            }
             if (cnn.length() == 1) {  
                 int arbic = isCNNumeric(cnn.charAt(0));  
                 if (arbic <= 10)  
@@ -59,14 +56,14 @@ public class NumberUtil {
                 cnn = "";  
             }  
         }  
-  
         wan = cnn.lastIndexOf('万');  
         if (wan > -1) {  
             val += cnNumericToArabic(cnn.substring(0, wan), false) * 10000;  
-            if (wan < cnn.length() - 1)  
+            if (wan < cnn.length() - 1) { 
                 cnn = cnn.substring(wan + 1, cnn.length());  
-            else  
+            }else  {
                 cnn = "";  
+            }
             if (cnn.length() == 1) {  
                 int arbic = isCNNumeric(cnn.charAt(0));  
                 if (arbic <= 10)  
@@ -78,10 +75,11 @@ public class NumberUtil {
         qian = cnn.lastIndexOf('千');  
         if (qian > -1) {  
             val += cnNumericToArabic(cnn.substring(0, qian), false) * 1000;  
-            if (qian < cnn.length() - 1)  
+            if (qian < cnn.length() - 1) { 
                 cnn = cnn.substring(qian + 1, cnn.length());  
-            else  
+            }else  {
                 cnn = "";  
+            }
             if (cnn.length() == 1) {  
                 int arbic = isCNNumeric(cnn.charAt(0));  
                 if (arbic <= 10)  
@@ -107,14 +105,16 @@ public class NumberUtil {
   
         shi = cnn.lastIndexOf('十');  
         if (shi > -1) {  
-            if (shi == 0)  
+            if (shi == 0) { 
                 val += 1 * 10;  
-            else  
+            }else { 
                 val += cnNumericToArabic(cnn.substring(0, shi), false) * 10;  
-            if (shi < cnn.length() - 1)  
+            }
+            if (shi < cnn.length() - 1){  
                 cnn = cnn.substring(shi + 1, cnn.length());  
-            else  
+            }else  {
                 cnn = "";  
+            }
         }  
   
         cnn = cnn.trim();  
@@ -134,20 +134,17 @@ public class NumberUtil {
     }  
   
     public static void main(String[] args) {  
-        int val = 0;  
+    	long val = 0;  
         long s = System.nanoTime();  
 //        val = cnNumericToArabic("三亿二千零六万七千五百六", true);  
 //        val = cnNumericToArabic("三十八亿五千二百九十一万五千二百九十", true);  
 //        val = cnNumericToArabic("伍仟贰佰玖拾壹万伍仟贰佰玖拾", true);  
-        val = cnNumericToArabic("三十八亿", true);  
+        val = cnNumericToArabic("三十八亿伍仟贰佰玖拾壹万伍仟贰佰玖拾", true);  
         System.out.println(val);  
         val = cnNumericToArabic("一九九八", true);  
-        val = cnNumericToArabic("壹玖玖捌", true);  
+        val = cnNumericToArabic("贰拾陆亿", true);  
         System.out.println(val);  
         long e = System.nanoTime();
-        int a = 30;
-        a += 8*1.0;
-        System.out.println(a);
         System.out.format("Done[" + val + "], cost: %.5fsec\n",  
                 ((float) (e - s)) / 1E9);  
     }  
