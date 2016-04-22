@@ -29,6 +29,7 @@
 15.session的原理
 16.git的版本控制：合并分支、冲突解决（merge、reset）
 17.消息队列：ActiveMQ、RabbitMQ、HttpSQS
+18.Elastic Search 、Solr
 
 
 设计模式
