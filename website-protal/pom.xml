@@ -211,6 +211,17 @@
 			<artifactId>commons-dbutils</artifactId>
 			<version>1.6</version>
 		</dependency>
+		
+		<!-- commons-httpclient 
+			commons-httpclient 和org.apache.httpcomponent 的区别
+		-->
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		
+		
   	</dependencies>
   	
   	

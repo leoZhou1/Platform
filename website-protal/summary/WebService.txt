@@ -1,0 +1,6 @@
+是什么
+在什么场景用
+有哪些实现框架
+
+http://blog.csdn.net/apicescn/article/details/42965785
+http://www.oschina.net/code/snippet_590649_33408

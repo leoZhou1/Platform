@@ -30,6 +30,11 @@
 16.git的版本控制：合并分支、冲突解决（merge、reset）
 17.消息队列：ActiveMQ、RabbitMQ、HttpSQS
 18.Elastic Search 、Solr
+19.jdk源码
+20.webService
+21.socket
+22.java service wrapper
+23.httpClient
 
 
 设计模式
