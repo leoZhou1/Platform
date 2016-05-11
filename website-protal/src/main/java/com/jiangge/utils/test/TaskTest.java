@@ -11,12 +11,12 @@ import com.jiangge.utils.task.TaskEntity;
 public class TaskTest {
 
 	/**
-	 * ²âÊÔ¶àÈÎÎñ¶ÓÁĞ
+	 * æµ‹è¯•å¤šä»»åŠ¡é˜Ÿåˆ—
 	 * @param args
 	 * @throws InterruptedException 
 	 */
 	public static void main(String[] args) throws InterruptedException{
-		/**ÉèÖÃÈÎÎñÁĞ±í**/
+		/**è®¾ç½®ä»»åŠ¡åˆ—è¡¨**/
 		List<TaskEntity> taskList = new ArrayList<TaskEntity>();
 		TaskEntity task = null;
 		Map<String, String> taskParam = null;
@@ -26,11 +26,11 @@ public class TaskTest {
 			task.setTaskMethod("send");
 			taskParam = new HashMap<String,String>();
 			taskParam.put("phone", "1888888888" + i);
-			taskParam.put("content", "²âÊÔÄÚÈİ" + i);
+			taskParam.put("content", "æµ‹è¯•å†…å®¹" + i);
 			task.setTaskParam(taskParam);
 			taskList.add(task);
 		}
-		/**½«ÈÎÎñÌí¼Óµ½¶ÓÁĞ**/
+		/**å°†ä»»åŠ¡æ·»åŠ åˆ°é˜Ÿåˆ—**/
 		TaskUtils.addTaskList(taskList);
 		Thread.sleep(2000);
 		System.out.println("===============");
@@ -41,7 +41,7 @@ public class TaskTest {
 			task.setTaskMethod("send");
 			taskParam = new HashMap<String,String>();
 			taskParam.put("phone", "1888888888" + i);
-			taskParam.put("content", "²âÊÔÄÚÈİ" + i);
+			taskParam.put("content", "æµ‹è¯•å†…å®¹" + i);
 			task.setTaskParam(taskParam);
 			taskList.add(task);
 		}
