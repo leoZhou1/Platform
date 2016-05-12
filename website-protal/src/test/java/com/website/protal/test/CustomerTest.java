@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import com.website.demo.model.Customer;
 import com.website.demo.service.CustomerService;
+import com.website.demo.service.impl.CustomerServiceImpl;
 
 import junit.framework.Assert;
 
@@ -14,7 +15,7 @@ public class CustomerTest {
 	private final CustomerService customerService;
 	
 	public CustomerTest(){
-		customerService = new CustomerService();
+		customerService = new CustomerServiceImpl();
 	}
 	
 	@Before

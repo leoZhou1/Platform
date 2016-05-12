@@ -14,21 +14,21 @@ import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
 /**
- * ÎÄ¼ş¼°ÎÄ¼ş¼ş´¦Àí¹¤¾ßÀà
+ * æ–‡ä»¶åŠæ–‡ä»¶ä»¶å¤„ç†å·¥å…·ç±»
  * @author jiang.li
  * @date 2013-12-19 14:27
  */
 public class FileUtils {
 
 	/**
-	 * ±éÀúÎÄ¼ş¼ĞÖĞÎÄ¼ş
-	 * @param filepath     ÎÄ¼şÂ·¾¶
-	 * @return ·µ»Øfile£Û£İ Êı×é
+	 * éå†æ–‡ä»¶å¤¹ä¸­æ–‡ä»¶
+	 * @param filepath     æ–‡ä»¶è·¯å¾„
+	 * @return è¿”å›fileï¼»ï¼½ æ•°ç»„
 	 */
 	public static File[] getFileList(String filepath) {
 		File d = null;
 		File list[] = null;
-		/** ½¨Á¢µ±Ç°Ä¿Â¼ÖĞÎÄ¼şµÄFile¶ÔÏó **/
+		/** å»ºç«‹å½“å‰ç›®å½•ä¸­æ–‡ä»¶çš„Fileå¯¹è±¡ **/
 		try {
 			d = new File(filepath);
 			if (d.exists()) {
@@ -37,15 +37,15 @@ public class FileUtils {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		/** È¡µÃ´ú±íÄ¿Â¼ÖĞËùÓĞÎÄ¼şµÄFile¶ÔÏóÊı×é **/
+		/** å–å¾—ä»£è¡¨ç›®å½•ä¸­æ‰€æœ‰æ–‡ä»¶çš„Fileå¯¹è±¡æ•°ç»„ **/
 		return list;
 	}
 
 	/**
-	 * ¶ÁÈ¡ÎÄ±¾ÎÄ¼şÄÚÈİ
-	 * @param filePathAndName  ´øÓĞÍêÕû¾ø¶ÔÂ·¾¶µÄÎÄ¼şÃû
-	 * @param encoding         ÎÄ±¾ÎÄ¼ş´ò¿ªµÄ±àÂë·½Ê½
-	 * @return                 ·µ»ØÎÄ±¾ÎÄ¼şµÄÄÚÈİ
+	 * è¯»å–æ–‡æœ¬æ–‡ä»¶å†…å®¹
+	 * @param filePathAndName  å¸¦æœ‰å®Œæ•´ç»å¯¹è·¯å¾„çš„æ–‡ä»¶å
+	 * @param encoding         æ–‡æœ¬æ–‡ä»¶æ‰“å¼€çš„ç¼–ç æ–¹å¼
+	 * @return                 è¿”å›æ–‡æœ¬æ–‡ä»¶çš„å†…å®¹
 	 */
 	public static String readTxt(String filePathAndName, String encoding) throws IOException {
 		encoding = encoding.trim();
@@ -78,9 +78,9 @@ public class FileUtils {
 	}
 
 	/**
-	 * ĞÂ½¨Ä¿Â¼
-	 * @param folderPath  Ä¿Â¼
-	 * @return            ·µ»ØÄ¿Â¼´´½¨ºóµÄÂ·¾¶
+	 * æ–°å»ºç›®å½•
+	 * @param folderPath  ç›®å½•
+	 * @return            è¿”å›ç›®å½•åˆ›å»ºåçš„è·¯å¾„
 	 */
 	public static String createFolder(String folderPath) {
 		String txt = folderPath;
@@ -97,10 +97,10 @@ public class FileUtils {
 	}
 
 	/**
-	 * ¶à¼¶Ä¿Â¼´´½¨
-	 * @param folderPath ×¼±¸ÒªÔÚ±¾¼¶Ä¿Â¼ÏÂ´´½¨ĞÂÄ¿Â¼µÄÄ¿Â¼Â·¾¶ÀıÈç c:myf
-	 * @param paths      ÎŞÏŞ¼¶Ä¿Â¼²ÎÊı£¬¸÷¼¶Ä¿Â¼ÒÔµ¥ÊıÏßÇø·Ö ÀıÈç a|b|c
-	 * @return           ·µ»Ø´´½¨ÎÄ¼şºóµÄÂ·¾¶
+	 * å¤šçº§ç›®å½•åˆ›å»º
+	 * @param folderPath å‡†å¤‡è¦åœ¨æœ¬çº§ç›®å½•ä¸‹åˆ›å»ºæ–°ç›®å½•çš„ç›®å½•è·¯å¾„ä¾‹å¦‚ c:myf
+	 * @param paths      æ— é™çº§ç›®å½•å‚æ•°ï¼Œå„çº§ç›®å½•ä»¥å•æ•°çº¿åŒºåˆ† ä¾‹å¦‚ a|b|c
+	 * @return           è¿”å›åˆ›å»ºæ–‡ä»¶åçš„è·¯å¾„
 	 */
 	public static String createFolders(String folderPath, String paths) {
 		String txts = folderPath;
@@ -123,9 +123,9 @@ public class FileUtils {
 	}
 
 	/**
-	 * ĞÂ½¨ÎÄ¼ş
-	 * @param filePathAndName ÎÄ±¾ÎÄ¼şÍêÕû¾ø¶ÔÂ·¾¶¼°ÎÄ¼şÃû
-	 * @param fileContent     ÎÄ±¾ÎÄ¼şÄÚÈİ
+	 * æ–°å»ºæ–‡ä»¶
+	 * @param filePathAndName æ–‡æœ¬æ–‡ä»¶å®Œæ•´ç»å¯¹è·¯å¾„åŠæ–‡ä»¶å
+	 * @param fileContent     æ–‡æœ¬æ–‡ä»¶å†…å®¹
 	 * @return
 	 */
 	public static void createFile(String filePathAndName, String fileContent) {
@@ -148,10 +148,10 @@ public class FileUtils {
 	}
 
 	/**
-	 * ÓĞ±àÂë·½Ê½µÄÎÄ¼ş´´½¨
-	 * @param filePathAndName ÎÄ±¾ÎÄ¼şÍêÕû¾ø¶ÔÂ·¾¶¼°ÎÄ¼şÃû
-	 * @param fileContent     ÎÄ±¾ÎÄ¼şÄÚÈİ
-	 * @param encoding  ±àÂë·½Ê½ ÀıÈç GBK »òÕß UTF-8
+	 * æœ‰ç¼–ç æ–¹å¼çš„æ–‡ä»¶åˆ›å»º
+	 * @param filePathAndName æ–‡æœ¬æ–‡ä»¶å®Œæ•´ç»å¯¹è·¯å¾„åŠæ–‡ä»¶å
+	 * @param fileContent     æ–‡æœ¬æ–‡ä»¶å†…å®¹
+	 * @param encoding  ç¼–ç æ–¹å¼ ä¾‹å¦‚ GBK æˆ–è€… UTF-8
 	 * @return
 	 */
 	public static void createFile(String filePathAndName, String fileContent, String encoding) {
@@ -172,9 +172,9 @@ public class FileUtils {
 	}
 
 	/**
-	 * É¾³ıÎÄ¼ş
-	 * @param filePathAndName ÎÄ±¾ÎÄ¼şÍêÕû¾ø¶ÔÂ·¾¶¼°ÎÄ¼şÃû
-	 * @return Boolean ³É¹¦É¾³ı·µ»ØtrueÔâÓöÒì³£·µ»Øfalse
+	 * åˆ é™¤æ–‡ä»¶
+	 * @param filePathAndName æ–‡æœ¬æ–‡ä»¶å®Œæ•´ç»å¯¹è·¯å¾„åŠæ–‡ä»¶å
+	 * @return Boolean æˆåŠŸåˆ é™¤è¿”å›trueé­é‡å¼‚å¸¸è¿”å›false
 	 */
 	public static boolean delFile(String filePathAndName) {
 		boolean bea = false;
@@ -194,20 +194,20 @@ public class FileUtils {
 	}
 
 	/**
-	 * É¾³ıÎÄ¼ş
+	 * åˆ é™¤æ–‡ä»¶
 	 * 
 	 * @param folderPath
-	 *            ÎÄ¼ş¼ĞÍêÕû¾ø¶ÔÂ·¾¶
+	 *            æ–‡ä»¶å¤¹å®Œæ•´ç»å¯¹è·¯å¾„
 	 * @return
 	 */
 	public static void delFolder(String folderPath) {
 		try {
-			/**É¾³ıÍêÀïÃæËùÓĞÄÚÈİ**/
+			/**åˆ é™¤å®Œé‡Œé¢æ‰€æœ‰å†…å®¹**/
 			delAllFile(folderPath);
 			String filePath = folderPath;
 			filePath = filePath.toString();
 			java.io.File myFilePath = new java.io.File(filePath);
-			/**É¾³ı¿ÕÎÄ¼ş¼Ğ**/
+			/**åˆ é™¤ç©ºæ–‡ä»¶å¤¹**/
 			myFilePath.delete(); 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -215,8 +215,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * É¾³ıÖ¸¶¨ÎÄ¼ş¼ĞÏÂËùÓĞÎÄ¼ş
-	 * @param path ÎÄ¼ş¼ĞÍêÕû¾ø¶ÔÂ·¾¶
+	 * åˆ é™¤æŒ‡å®šæ–‡ä»¶å¤¹ä¸‹æ‰€æœ‰æ–‡ä»¶
+	 * @param path æ–‡ä»¶å¤¹å®Œæ•´ç»å¯¹è·¯å¾„
 	 * @return
 	 */
 	public static boolean delAllFile(String path) {
@@ -234,9 +234,9 @@ public class FileUtils {
 			}
 			if (temp.isFile()) { temp.delete(); }
 			if (temp.isDirectory()) {
-				/**ÏÈÉ¾³ıÎÄ¼ş¼ĞÀïÃæµÄÎÄ¼ş**/
+				/**å…ˆåˆ é™¤æ–‡ä»¶å¤¹é‡Œé¢çš„æ–‡ä»¶**/
 				delAllFile(path + "/" + tempList[i]);
-				/**ÔÙÉ¾³ı¿ÕÎÄ¼ş**/
+				/**å†åˆ é™¤ç©ºæ–‡ä»¶**/
 				delFolder(path + "/" + tempList[i]);
 				bea = true;
 			}
@@ -245,9 +245,9 @@ public class FileUtils {
 	}
 
 	/**
-	 * ¸´ÖÆµ¥¸öÎÄ¼ş
-	 * @param oldPathFile  ×¼±¸¸´ÖÆµÄÎÄ¼şÔ´
-	 * @param newPathFile ¿½±´µ½ĞÂ¾ø¶ÔÂ·¾¶´øÎÄ¼şÃû
+	 * å¤åˆ¶å•ä¸ªæ–‡ä»¶
+	 * @param oldPathFile  å‡†å¤‡å¤åˆ¶çš„æ–‡ä»¶æº
+	 * @param newPathFile æ‹·è´åˆ°æ–°ç»å¯¹è·¯å¾„å¸¦æ–‡ä»¶å
 	 * @return
 	 */
 	public static void copyFile(String oldPathFile, String newPathFile) {
@@ -271,14 +271,14 @@ public class FileUtils {
 	}
 
 	/**
-	 * ¸´ÖÆÕû¸öÎÄ¼ş¼ĞµÄÄÚÈİ
-	 * @param oldPath  ×¼±¸¿½±´µÄÄ¿Â¼
-	 * @param newPath  Ö¸¶¨¾ø¶ÔÂ·¾¶µÄĞÂÄ¿Â¼
+	 * å¤åˆ¶æ•´ä¸ªæ–‡ä»¶å¤¹çš„å†…å®¹
+	 * @param oldPath  å‡†å¤‡æ‹·è´çš„ç›®å½•
+	 * @param newPath  æŒ‡å®šç»å¯¹è·¯å¾„çš„æ–°ç›®å½•
 	 * @return
 	 */
 	public static void copyFolder(String oldPath, String newPath) {
 		try {
-			/**Èç¹ûÎÄ¼ş¼Ğ²»´æÔÚ Ôò½¨Á¢ĞÂÎÄ¼ş**/
+			/**å¦‚æœæ–‡ä»¶å¤¹ä¸å­˜åœ¨ åˆ™å»ºç«‹æ–°æ–‡ä»¶**/
 			new File(newPath).mkdirs(); 
 			File a = new File(oldPath);
 			String[] file = a.list();
@@ -302,7 +302,7 @@ public class FileUtils {
 					output.close();
 					input.close();
 				}
-				/**Èç¹ûÊÇ×ÓÎÄ¼ş**/
+				/**å¦‚æœæ˜¯å­æ–‡ä»¶**/
 				if (temp.isDirectory()) {
 					copyFolder(oldPath + "/" + file[i], newPath + "/" + file[i]);
 				}
@@ -313,7 +313,7 @@ public class FileUtils {
 	}
 
 	/**
-	 * ÒÆ¶¯ÎÄ¼ş
+	 * ç§»åŠ¨æ–‡ä»¶
 	 * @param oldPath
 	 * @param newPath
 	 * @return
@@ -324,7 +324,7 @@ public class FileUtils {
 	}
 
 	/**
-	 * ÒÆ¶¯Ä¿Â¼
+	 * ç§»åŠ¨ç›®å½•
 	 * @param oldPath
 	 * @param newPath
 	 * @return
@@ -335,7 +335,7 @@ public class FileUtils {
 	}
 
 	/**
-	 * ½¨Á¢Ò»¸ö¿ÉÒÔ×·¼ÓµÄBufferedReader
+	 * å»ºç«‹ä¸€ä¸ªå¯ä»¥è¿½åŠ çš„BufferedReader
 	 * @param fileDir
 	 * @param fileName
 	 * @return
@@ -359,7 +359,7 @@ public class FileUtils {
 	}
 
 	/**
-	 * µÃµ½Ò»¸öBufferedReader
+	 * å¾—åˆ°ä¸€ä¸ªBufferedReader
 	 * @param fileDir
 	 * @param fileName
 	 * @param encoding

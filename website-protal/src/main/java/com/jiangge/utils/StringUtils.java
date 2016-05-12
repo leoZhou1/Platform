@@ -3,15 +3,15 @@ package com.jiangge.utils;
 import java.util.List;
 
 /**
- * ×Ö·û´®´¦Àí¹¤¾ßÀà
+ * å­—ç¬¦ä¸²å¤„ç†å·¥å…·ç±»
  * @author jiang.li
  * @date 2013-12-18 11:22
  */
 public class StringUtils {
 
 	/**
-	 * ¼ì²é×Ö·û´®ÊÇ·ñÎª¿Õ
-	 * @param str ×Ö·û´®
+	 * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦ä¸ºç©º
+	 * @param str å­—ç¬¦ä¸²
 	 * @return
 	 */
 	public static boolean isEmpty(String str) {
@@ -25,8 +25,8 @@ public class StringUtils {
 	}
 	
 	/**
-	 * ¼ì²é×Ö·û´®ÊÇ·ñÎª¿Õ
-	 * @param str ×Ö·û´®
+	 * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦ä¸ºç©º
+	 * @param str å­—ç¬¦ä¸²
 	 * @return
 	 */
 	public static boolean isNotEmpty(String str) {
@@ -41,9 +41,9 @@ public class StringUtils {
 
 
 	 /**
-	  * °Ñ×Ö·û´®°´·Ö¸ô·û×ª»»ÎªÊı×é
-	  * @param str  ×Ö·û´®
-	  * @param expr ·Ö¸ô·û
+	  * æŠŠå­—ç¬¦ä¸²æŒ‰åˆ†éš”ç¬¦è½¬æ¢ä¸ºæ•°ç»„
+	  * @param str  å­—ç¬¦ä¸²
+	  * @param expr åˆ†éš”ç¬¦
 	  * @return
 	  */
 	 public static String[] stringToArray(String str, String expr){
@@ -51,7 +51,7 @@ public class StringUtils {
 	 }
 	 
 	 /**
-	  * ½«Êı×é°´ÕÕ¸ø¶¨µÄ·Ö¸ô×ª»¯³É×Ö·û´®
+	  * å°†æ•°ç»„æŒ‰ç…§ç»™å®šçš„åˆ†éš”è½¬åŒ–æˆå­—ç¬¦ä¸²
 	  * @param arr
 	  * @param expr
 	  * @return
@@ -71,7 +71,7 @@ public class StringUtils {
 	 
 	 
 	 /**
-	  * ½«¼¯ºÏ°´ÕÕ¸ø¶¨µÄ·Ö¸ô×ª»¯³É×Ö·û´®
+	  * å°†é›†åˆæŒ‰ç…§ç»™å®šçš„åˆ†éš”è½¬åŒ–æˆå­—ç¬¦ä¸²
 	  * @param arr
 	  * @param expr
 	  * @return

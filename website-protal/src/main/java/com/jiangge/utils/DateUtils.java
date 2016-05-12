@@ -7,13 +7,13 @@ import java.util.Date;
 import java.util.TimeZone;
 
 /**
- * ÈÕÆÚ´¦Àí¹¤¾ßÀà
+ * æ—¥æœŸå¤„ç†å·¥å…·ç±»
  * @author jiang.li
  * @date 2013-12-18 11:22
  */
 public class DateUtils {
 	
-	/**¶¨Òå³£Á¿**/
+	/**å®šä¹‰å¸¸é‡**/
 	public static final String DATE_FULL_STR = "yyyy-MM-dd HH:mm:ss";
 	public static final String DATE_LONG_STR = "yyyy-MM-dd kk:mm:ss.SSS";
 	public static final String DATE_SMALL_STR = "yyyy-MM-dd";
@@ -21,7 +21,7 @@ public class DateUtils {
     public static final String DATE_All_KEY_STR = "yyyyMMddHHmmss";
 
     /**
-     * ¸øÖ¸¶¨µÄÈÕÆÚ¼ÓÉÏ(¼õÈ¥)ÔÂ·İ
+     * ç»™æŒ‡å®šçš„æ—¥æœŸåŠ ä¸Š(å‡å»)æœˆä»½
      * @param date
      * @param pattern
      * @param num
@@ -37,7 +37,7 @@ public class DateUtils {
 
 
     /**
-     * ¸øÖÆ¶¨µÄÊ±¼ä¼ÓÉÏ(¼õÈ¥)Ìì
+     * ç»™åˆ¶å®šçš„æ—¶é—´åŠ ä¸Š(å‡å»)å¤©
      * @param date
      * @param pattern
      * @param num
@@ -52,7 +52,7 @@ public class DateUtils {
     }
     
     /**
-	 * »ñÈ¡ÏµÍ³µ±Ç°Ê±¼ä
+	 * è·å–ç³»ç»Ÿå½“å‰æ—¶é—´
 	 * @return
 	 */
 	public static String getNowTime() {
@@ -61,7 +61,7 @@ public class DateUtils {
 	}
 	
 	/**
-	 * »ñÈ¡ÏµÍ³µ±Ç°Ê±¼ä(Ö¸¶¨·µ»ØÀàĞÍ)
+	 * è·å–ç³»ç»Ÿå½“å‰æ—¶é—´(æŒ‡å®šè¿”å›ç±»å‹)
 	 * @return
 	 */
 	public static String getNowTime(String type) {
@@ -70,8 +70,8 @@ public class DateUtils {
 	}
 	
 	/**
-	 * Ê¹ÓÃÔ¤Éè¸ñÊ½ÌáÈ¡×Ö·û´®ÈÕÆÚ
-	 * @param date ÈÕÆÚ×Ö·û´®
+	 * ä½¿ç”¨é¢„è®¾æ ¼å¼æå–å­—ç¬¦ä¸²æ—¥æœŸ
+	 * @param date æ—¥æœŸå­—ç¬¦ä¸²
 	 * @return
 	 */
 	public static Date parse(String date) {
@@ -79,7 +79,7 @@ public class DateUtils {
 	}
 	
 	/**
-	 * Ö¸¶¨Ö¸¶¨ÈÕÆÚ×Ö·û´®
+	 * æŒ‡å®šæŒ‡å®šæ—¥æœŸå­—ç¬¦ä¸²
 	 * @param date
 	 * @param pattern
 	 * @return
@@ -95,7 +95,7 @@ public class DateUtils {
 	}
 	
 	/**
-	 * Á½¸öÊ±¼ä±È½Ï
+	 * ä¸¤ä¸ªæ—¶é—´æ¯”è¾ƒ
 	 * @param
 	 * @return
 	 */
@@ -106,7 +106,7 @@ public class DateUtils {
 	}
 	
 	/**
-	 * Á½¸öÊ±¼ä±È½Ï(Ê±¼ä´Á±È½Ï)
+	 * ä¸¤ä¸ªæ—¶é—´æ¯”è¾ƒ(æ—¶é—´æˆ³æ¯”è¾ƒ)
 	 * @param
 	 * @return
 	 */
@@ -123,9 +123,9 @@ public class DateUtils {
 	
 	
 	/**
-	 * ½«Ö¸¶¨µÄÈÕÆÚ×ª»»³ÉUnixÊ±¼ä´Á
-	 * @param date ĞèÒª×ª»»µÄÈÕÆÚ yyyy-MM-dd HH:mm:ss
-	 * @return long Ê±¼ä´Á
+	 * å°†æŒ‡å®šçš„æ—¥æœŸè½¬æ¢æˆUnixæ—¶é—´æˆ³
+	 * @param date éœ€è¦è½¬æ¢çš„æ—¥æœŸ yyyy-MM-dd HH:mm:ss
+	 * @return long æ—¶é—´æˆ³
 	 */
 	public static long dateToUnixTimestamp(String date) {
 		long timestamp = 0;
@@ -139,9 +139,9 @@ public class DateUtils {
 	}
 	
 	/**
-	 * ½«Ö¸¶¨µÄÈÕÆÚ×ª»»³ÉUnixÊ±¼ä´Á
-	 * @param  date ĞèÒª×ª»»µÄÈÕÆÚ yyyy-MM-dd
-	 * @return long Ê±¼ä´Á
+	 * å°†æŒ‡å®šçš„æ—¥æœŸè½¬æ¢æˆUnixæ—¶é—´æˆ³
+	 * @param  date éœ€è¦è½¬æ¢çš„æ—¥æœŸ yyyy-MM-dd
+	 * @return long æ—¶é—´æˆ³
 	 */
 	public static long dateToUnixTimestamp(String date, String dateFormat) {
 		long timestamp = 0;
@@ -154,8 +154,8 @@ public class DateUtils {
 	}
 	
 	/**
-	 * ½«µ±Ç°ÈÕÆÚ×ª»»³ÉUnixÊ±¼ä´Á
-	 * @return long Ê±¼ä´Á
+	 * å°†å½“å‰æ—¥æœŸè½¬æ¢æˆUnixæ—¶é—´æˆ³
+	 * @return long æ—¶é—´æˆ³
 	 */
 	public static long dateToUnixTimestamp() {
 		long timestamp = new Date().getTime();
@@ -163,9 +163,9 @@ public class DateUtils {
 	}
 
 	/**
-	 * ½«UnixÊ±¼ä´Á×ª»»³ÉÈÕÆÚ
-	 * @param timestamp Ê±¼ä´Á
-	 * @return String ÈÕÆÚ×Ö·û´®
+	 * å°†Unixæ—¶é—´æˆ³è½¬æ¢æˆæ—¥æœŸ
+	 * @param timestamp æ—¶é—´æˆ³
+	 * @return String æ—¥æœŸå­—ç¬¦ä¸²
 	 */
 	public static String unixTimestampToDate(long timestamp) {
 		SimpleDateFormat sd = new SimpleDateFormat(DATE_FULL_STR);
@@ -174,9 +174,9 @@ public class DateUtils {
 	}
 
     /**
-     * ½«UnixÊ±¼ä´Á×ª»»³ÉÈÕÆÚ
-     * @param timestamp Ê±¼ä´Á
-     * @return String ÈÕÆÚ×Ö·û´®
+     * å°†Unixæ—¶é—´æˆ³è½¬æ¢æˆæ—¥æœŸ
+     * @param timestamp æ—¶é—´æˆ³
+     * @return String æ—¥æœŸå­—ç¬¦ä¸²
      */
     public static String TimeStamp2Date(long timestamp,String dateFormat){
         String date = new SimpleDateFormat(dateFormat).format(new Date(timestamp));
@@ -184,9 +184,9 @@ public class DateUtils {
     }
 
     /**
-     * ½«UnixÊ±¼ä´Á×ª»»³ÉÈÕÆÚ
-     * @param timestamp Ê±¼ä´Á
-     * @return String ÈÕÆÚ×Ö·û´®
+     * å°†Unixæ—¶é—´æˆ³è½¬æ¢æˆæ—¥æœŸ
+     * @param timestamp æ—¶é—´æˆ³
+     * @return String æ—¥æœŸå­—ç¬¦ä¸²
      */
     public static String TimeStamp2Date(long timestamp){
         String date = new SimpleDateFormat(DATE_FULL_STR).format(new Date(timestamp));
