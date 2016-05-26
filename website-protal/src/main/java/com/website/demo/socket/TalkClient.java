@@ -11,7 +11,7 @@ public class TalkClient {
 
 		try {
 
-			Socket socket = new Socket("127.0.0.1", 4700);
+			Socket socket = new Socket("127.0.0.1", 4567);
 
 			// 向本机的4700端口发出客户请求
 
