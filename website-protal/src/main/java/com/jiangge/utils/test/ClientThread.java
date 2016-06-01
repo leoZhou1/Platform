@@ -22,7 +22,7 @@ public class ClientThread implements Runnable{
             in = socket.getInputStream();
             doWrite(out);
 //            System.out.println("begin read message from server.");
-//            doRead(in);
+            doRead(in);
             
         } catch (IOException e) {
             e.printStackTrace();

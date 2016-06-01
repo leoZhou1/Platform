@@ -12,11 +12,13 @@
 	缓存机制
 6.前端技术：jquery、bootstrap、h5、兼容性问题-浏览器、node.js、angular.js
 	javascript:需要熟悉其面向对象的编程方式，需要深入学习
+	node.js
 7.mysql、oracle
 	索引、视图、存储过程、备份
 	性能瓶颈、
 	sql调优
 	分库、分表
+	读写分离
 8.nginx
 9.电商的秒抢实现  、 队列
 10.mongoDB
@@ -35,7 +37,7 @@
 21.socket
 22.java service wrapper
 23.httpClient
-24.netty
+24.netty、mina
 
 
 设计模式
